@@ -8,6 +8,7 @@ const passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
   'google',
@@ -26,13 +27,7 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ));
 
-// Google OAuth login route
-router.get('/auth/google', passport.authenticate(
-  'google',
-  {
-    scope: ['profile', 'email'],
-  }
-));
+
 
 // OAuth logout route
 router.get('/logout', function(req, res){
