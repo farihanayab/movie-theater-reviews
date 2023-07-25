@@ -1,0 +1,65 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Title: </div>
+  <div><%= movie.theater %></div>
+  <div>year Built: </div>
+  <!-- <div><%= movie.releaseYear %></div> -->
+  <div>Rating: </div>
+  <div><%= movie.mpaaRating %></div> 
+  <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
+  <!-- start cast list -->
+
+  <!-- end cast list -->
+</section>
+<!-- add to cast form below this comment -->
+
+<br><br><h2>Reviews</h2>
+<% if (user) { %>
+<form id="add-review-form" method="POST"
+  action="/movies/<%= movie._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+<% } %>
+<% if (theater.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% theater.reviews.forEach(function(r) { %>
+        <tr>
+            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
+          <td>
+            <% if (user?._id.equals(r.user)) { %>
+              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+  
+<%- include('../partials/footer') %>
