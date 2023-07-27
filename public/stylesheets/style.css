@@ -16,7 +16,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #a0eafc;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -52,7 +52,7 @@ nav > a {
 
 nav > a:hover:not(.active) {
   color: white;
-  background-color: #424748;
+  background-color: #445e63;
 }
 
 nav > a.active {
@@ -86,7 +86,7 @@ table {
 
 table thead th {
   padding: 5px;
-  border-bottom: 2px solid #424748;
+  border-bottom: 2px solid #3d5c62;
 }
 
 table td {
@@ -149,7 +149,7 @@ hr {
 }
 
 .badge {
-  background-color: #B8C0C2;
+  background-color: #77e4ff;
   padding: .5rem;
   margin: .5rem;
   border-radius: .3rem;

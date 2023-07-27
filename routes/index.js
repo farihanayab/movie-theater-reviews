@@ -1,13 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var router = require('express').Router();
+// const router = require('express').Router();
 const passport = require('passport');
+const {profile} = require ('console')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('theaters', {title:'theaters' });
+
 });
+
 
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
@@ -26,9 +29,14 @@ router.get('/oauth2callback', passport.authenticate(
     failureRedirect: '/theaters'
   }
 ));
-
-
-
+// Google OAuth login route
+router.get('/auth/google', passport.authenticate(
+  // Which passport strategy is being used?
+  'google',
+  {
+    scope: ['profile', 'email'],
+  }
+));
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
