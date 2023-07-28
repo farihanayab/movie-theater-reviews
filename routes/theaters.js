@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const reviewsCtrl = require('../controllers/theater');
+const theatersCtrl = require('../controllers/theaters');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
+router.get('/', theatersCtrl.index);
 // POST /movies/:id/reviews (create review for a theater)
-router.post('/theaters/:id/reviews', reviewsCtrl.create);
-router.get('/theaters',reviewsCtrl.create )
+router.post('/create', theatersCtrl.create);
+// router.get('/theaters',reviewsCtrl.create )
 
-router.get('/', reviewsCtrl.index);
+
 //Use ensureLoggedIn middleware to protect routes
-router.get('/new', ensureLoggedIn, reviewsCtrl.new); 
+router.get('/new', ensureLoggedIn, theatersCtrl.new); 
 // router.get('/:id', reviewsCtrl.show);
 
 

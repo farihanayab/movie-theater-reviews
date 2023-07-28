@@ -7,9 +7,11 @@ const {profile} = require ('console')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('theaters', {title:'theaters' });
-
+  res.render('index', {title:'theaters' });
 });
+
+
+
 
 
 router.get('/auth/google', passport.authenticate(

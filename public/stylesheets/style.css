@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   font-family: Helvetica;
   color: #424748;
@@ -137,16 +137,16 @@ table td {
 hr {
   color: #424748
 }
-
+/* 
 #badge-container {
   display: flex;
   flex-wrap: wrap;
   /* padding: 1rem; */
-  width: 80%;
+  /* width: 80%;
   border: 2px solid #B8C0C2;
   border-radius: .5rem;
   margin: .5rem 0 2rem;
-}
+} */ */
 
 .badge {
   background-color: #77e4ff;
@@ -155,7 +155,7 @@ hr {
   border-radius: .3rem;
   font-size: .8rem;
   text-align: center;
-}
+} */
 
 .login {
   display: flex;

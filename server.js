@@ -14,7 +14,8 @@ require('./config/passport.js');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const theatersRouter = require('./routes/theater')
+const theatersRouter = require('./routes/theaters')
+const reviewsRouter = require('./routes/reviews')
 const methodOverride = require('method-override');
 
 
@@ -48,6 +49,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/theaters', theatersRouter);
+app.use('/reviews', reviewsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

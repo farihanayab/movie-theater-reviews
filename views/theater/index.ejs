@@ -1,16 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body> 
-  <%- include('../partials/header.ejs') %>
-  <h1>Movie Theater Reviews</h1>
-<h2>   </h2>
-<button>
-  <a href="/theaters/new">Write Review</a></button>
-  <main>
+   <%- include('../partials/header.ejs') %>
+   <h1>Movie Theater Reviews</h1>
+   <table>
+    <thead>
+      <tr>
+        <th>Theater</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% theaters.forEach(function(t) { %>
+        <tr>
+          <td><%= t.theaterName %></td>
+          <td><%= t.theaterDetails %></td>
+          <td><%= t.theaterLocation%></td>
+          <td><%= t.rating %></td>
+          <td><%= t.reviews %></td>
+        <td><a href="/theater/<%= t._id %>">Details</a></td>
+         <td> <% t.details.forEach(detail => { %> 
+        <% detail.theaterDetails %>
+        <% detail.theaterLocation %>
+        <% detail.reviews %>
+        <% })%>
+        <form action="/theater/<%= t._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+         </td> 
+        </tr> 
+      <% }); %>
+    </tbody>
+  </table>
   
+    <%- include('../partials/footer.ejs') %>
+

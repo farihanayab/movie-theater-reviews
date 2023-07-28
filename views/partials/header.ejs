@@ -10,10 +10,8 @@
 <body>
   <nav>
     <img src="/images/camera.svg">
-    <a href="/theaters" <%- title === 'Add Review' ? 'class="active"' : '' %>>All Reviews</a>
+    <a href="/theaters" <%- title === 'All Reviews' ? 'class="active"' : '' %>>All Reviews</a>
     <% if (user) { %>
-      <!-- <a href="/performers/new"	<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-      ADD PERFORMER</a> -->
       <a href="/theaters/new" <%- title === 'Add Review' ? 'class="active"' : '' %>>Add Review</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
