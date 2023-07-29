@@ -1,13 +1,12 @@
+// controllers/reviewsCtrl.js
 
 // require theater model
 const Review = require('../models/review');
 const Theater = require('../models/theater');
+const reviewsCtrl = require('../controllers/reviews');
 
 // CREATE
 async function create(req, res, next) {
-//   console.log("In the create function!")
-//   console.log("Req: " + req)
-//   console.log("Res: " + res)
   try {
     console.log("In the try function!")
     req.body.user = req.user._id;
@@ -27,16 +26,71 @@ async function create(req, res, next) {
   }
 }
 
+// // Show a specific review using its ID
+// exports.show = (req, res) => {
+//     const reviewsId= req.params.id;
 
-  
+// };
 
 
+
+// SHOW
+// GET /:id
+router.get('/:id', (req, res, next) => {
+	const id = req.params.id;
+	review.findById(id)
+		.then((getreview) => res.json(getreview))
+		.catch(next);
+});
 
 module.exports = {
   create,
-//   getReviews,
+  show,
+// getReviews,
 //   editReview,
 //   deleteReview,
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

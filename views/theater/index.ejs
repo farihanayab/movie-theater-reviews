@@ -16,13 +16,13 @@
           <td><%= t.theaterLocation%></td>
           <td><%= t.rating %></td>
           <td><%= t.reviews %></td>
-        <td><a href="/theater/<%= t._id %>">Details</a></td>
+        <td><a href="/theaters/<%= t._id %>">Details</a></td>
          <td> <% t.details.forEach(detail => { %> 
         <% detail.theaterDetails %>
         <% detail.theaterLocation %>
         <% detail.reviews %>
         <% })%>
-        <form action="/theater/<%= t._id %>?_method=DELETE" method="POST">
+        <form action="/theaters/<%= t._id %>?_method=DELETE" method="POST">
           <button type="submit">X</button>
         </form>
          </td> 
