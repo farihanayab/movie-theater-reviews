@@ -19,9 +19,9 @@ URL:
 
 MVP Goals:
 
-As a user, I want to add a review of a movie theater.
-As a user, I want to see all the reviews added.
-As a user, I want to be able to add, delete and edit my review.
+- As a user, I want to add a review of a movie theater.
+- As a user, I want to see all the reviews added.
+- As a user, I want to be able to add, delete and edit my review.
 
 
 # Next Steps
