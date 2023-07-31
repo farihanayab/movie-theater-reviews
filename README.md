@@ -16,10 +16,10 @@ Movie theater reviews is a app that can help people write and look at reviews fo
 
 # Getting Started
 URL: 
-
+Trello Board:https://trello.com/b/nBPRz2df/project-2
 MVP Goals:
 
-- As a user, I want to add a review of a movie theater.
+- As a visitor I want to be able to click "Login with Google" to access features the app offers it users.
 - As a user, I want to see all the reviews added.
 - As a user, I want to be able to add, delete and edit my review.
 
