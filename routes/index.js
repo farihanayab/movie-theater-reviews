@@ -11,9 +11,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-
-
-
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?
   'google',
@@ -45,5 +42,7 @@ router.get('/logout', function(req, res){
     res.redirect('/theaters');
   });
 });
+
+
 module.exports = router;
 

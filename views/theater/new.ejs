@@ -1,21 +1,24 @@
 <%- include('../partials/header') %>
-<form id="add-review-form" method="POST"
-      action="/theaters/create">
-      <label>Theater name:</label>
-      <input type = "text" name="theaterName">
-      <label>Rating:</label>
-      <select name="rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-      </select>
-      <label>Theater Location:</label>
-      <input type="text" value="theaterLocation">
+<form id="add-review-form" method="POST" action="/theaters/create">
+  <label>Theater Name:</label>
+  <input type="text" name="newTheaterName">
+  <label>Theater Location:</label>
+  <input type="text" name="newTheaterLocation">
+  <label>Your Name:</label>
+  <input type="text" name="user">
+  <label>Title:</label>
+  <input type="text" name="title" required>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <label>Review:</label>
+  <input type="text" name="review" required>
   <input type="submit" value="Add Review">
 </form>
-
 <%- include('../partials/footer') %>
 
-<!-- add overall rating including 3 options like clean, good service, food -->

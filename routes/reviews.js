@@ -2,19 +2,18 @@ const express = require('express');
 const router = express.Router();
 const reviewsCtrl = require('../controllers/reviews');
 
+router.get('/add-review/:id', reviewsCtrl.addReview)
 // create a review
-router.post('/', reviewsCtrl.create)
+router.post('/:id', reviewsCtrl.create)
 
-// get the review
-router.get('/theater/reviews/:id', reviewsCtrl.getReviews);
 
 // // update the review
-// router.put('theater/reviews/:id', reviewsCtrl.editREview);
+router.put('theater/reviews/:id', reviewsCtrl.updateReview);
 
 // // delete the review 
-// router.delete('theter/reviews/:id', reviewsCtrl.deleteReview)
-// Assuming you already have these lines for other routes
+router.delete('theater/reviews/:id', reviewsCtrl.deleteReview)
 
 
-// Show a specific theater review using its ID
-router.get('/theaters/:id', reviewsCtrl.show);
+
+
+module.exports = router;

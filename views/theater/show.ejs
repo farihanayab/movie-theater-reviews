@@ -1,38 +1,24 @@
 <%- include('../partials/header') %>
-
-<section id="show-page">
-  <div>Title: </div>
-  <div><%= movie.theater %></div>
-  <div>year Built: </div>
-  <!-- <div><%= movie.releaseYear %></div> -->
-  <div>Rating: </div>
-  <div><%= movie.mpaaRating %></div> 
-  
-  
-
-  <!-- end cast list -->
-</section>
-  
-<%- include('../partials/footer') %>
-
-<!-- const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-
-const review = require('./review').schema;
-const detailSchema = new Schema ({
-	theaterDetails: String,
-	theaterLocation: String,
-	reviews: [review],
-	rating: {
-		type: Number,
-		enum: ["1", "2", "3", "4", "5"]
-	},
-})
-const theaterSchema = new Schema({
-	theaterName: String,
-	details: [detailSchema] },
-	{ timestamps: true,
-});
-
-module.exports = mongoose.model('theater', theaterSchema); -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Showing Theater Details for <%= theater.theaterName %></h1> 
+	<h2>Name: <%= theater.theaterName %> </h2>
+	<a href=/theaters/new> >Add A Review</a>
+	<h3>Theater Reviews</h3>
+	<div>
+	<ul>
+		<% theater.theaterReviews.forEach(function(t) { %>
+			<h3>
+			Review: <%= t.review %> 
+			</h3>    
+		<%}) %>
+	</ul>
+	</div>    
+</body>
+</html>

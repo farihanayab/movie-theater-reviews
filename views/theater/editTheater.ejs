@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Theater</h1>
+    <form action="/theaters/<%= theater._id %>?_method=PUT" method="POST">
+        
+        <label for="theaterName">Theater Name:</label>
+        <input type="text" name="theaterName" value="<%= theater.theaterName %>" required>
+      
+        <label for="theaterLocation">Theater Location:</label>
+        <input type="text" name="theaterLocation" value="<%= theater.theaterLocation %>" required>
+
+      
+        <button type="submit">Update</button>
+      </form>
+    
+</body>
+</html>
