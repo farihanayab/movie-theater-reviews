@@ -6,6 +6,8 @@ Movie theater reviews is a app that can help people write and look at reviews fo
 
 <img width="1463" alt="Screenshot 2023-07-31 at 5 47 59 AM" src="https://github.com/farihanayab/movie-theater-reviews/assets/134460266/ae7ef24f-4220-49b9-abd9-bf56a455fa29">
 <img width="1467" alt="Screenshot 2023-07-31 at 9 18 21 AM" src="https://github.com/farihanayab/movie-theater-reviews/assets/134460266/b9cb8732-4c20-44de-90c6-e16635df2841">
+<img width="1470" alt="Screenshot 2023-07-31 at 5 48 34 AM" src="https://github.com/farihanayab/movie-theater-reviews/assets/134460266/027e1eca-e8ad-4fd7-8e4d-9d905ea324f0">
+
 
 # Technologies Used
 
